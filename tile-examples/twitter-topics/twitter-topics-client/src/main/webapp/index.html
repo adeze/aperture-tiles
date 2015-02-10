@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">    
-    <title>Interactive Map Demo</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="tiles.css" />
+    <title>Aperture Tiles Interactive Demo</title>
+    <link rel="icon" href="resources/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/vendor.min.css" />
+    <link rel="stylesheet" href="tiles.min.css" />  
+    <link rel="stylesheet" href="vendor/tiles-ui.min.css" />
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script src="vendor/jquery-2.1.1.min.js"></script>
-    <script src="vendor/lodash.2.4.1min.js"></script>
-    <script src="vendor/OpenLayers.2.12.min.js"></script>
-    <script src="tiles.js"></script>
-    <script src="app.js"></script>
-    <script type="text/javascript">
-      window.onload = appStart;
-    </script>
+    <script src="vendor/vendor.min.js"></script>
+    <script src="tiles.min.js"></script>
+    <script src="vendor/tiles-ui.min.js"></script>
   </head>
-  <body class="dark-theme">
-    <div id="map" class="olMap"></div>
+  <body ng-app="crisis" ng-controller="LayersController">
+    <div class="views-menu" ng-if="views.length>1">
+        <ul class="dropdown-menu" toggle-class="dropdown-menu-open">
+          <li class="menu-item"
+            ng-class="{active:isViewActive(view)}" 
+            ng-click="setView(view)" 
+            ng-repeat="view in views">
+            <a href="#" class="menu-item-link view-link">{{view.name}}</a>
+          </li>
+        </ul>
+    </div>
+    <!-- description -->
+    <div drop-down-overlay template-url="templates/description.html" is-open="openDescription"></div>
+    <!-- map -->
+    <div id="map" class="olMap" ng-class="{open:openControls}"></div>
+    <!-- side controls -->
+    <div class="side-controls" ng-include src="'templates/side-controls.html'" ng-class="{open:openControls}"></div>
   </body>
 </html>

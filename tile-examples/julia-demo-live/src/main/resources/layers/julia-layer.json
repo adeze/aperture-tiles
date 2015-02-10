@@ -2,6 +2,8 @@
 	{
 		"id": "julia-set",
 		"public" :{
+			"domain": "server",
+			"name": "Julia Set",
 			"pyramid": {
 				"type": "AreaOfInterest",
 				"minX": -2,

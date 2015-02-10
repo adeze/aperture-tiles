@@ -1,0 +1,1 @@
+<div ng-repeat="(group, layersByDomain) in layersByGroupThenDomain"><h4 class=layer-group-header>{{group}}</h4><div ng-repeat="(domain, layers) in layersByDomain"><div class=layer-domain-header>{{domain}}</div><div ng-repeat="layer in layers"><li class=layer-entry ng-include="" src="'templates/layer-entry.html'"></li></div></div></div>

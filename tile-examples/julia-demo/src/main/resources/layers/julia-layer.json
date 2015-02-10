@@ -2,13 +2,8 @@
 	{
 		"id": "julia-set",
 		"public" :{
-			"pyramid": {
-				"type": "AreaOfInterest",
-				"minX": -2,
-				"maxX": 2,
-				"minY": -2,
-				"maxY": 2
-			},
+			"name": "Julia Set",
+			"domain": "server",
 		},
 		"private": {
 			"data" : {

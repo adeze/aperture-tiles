@@ -2,6 +2,8 @@
     {
         "id":"tweet-heatmap",
         "public": {
+            "name": "Twitter Activity Heatmap",
+            "domain": "server",
             "pyramid": {
                 "type": "WebMercator"
             }
@@ -23,6 +25,9 @@
     {
         "id": "top-tweets",
         "public": {
+            "name": "Twitter Top Tweets",
+            "domain": "client",
+            "exclusive": true,
             "pyramid": {
                 "type": "WebMercator"
             }
